@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="./starbucks.css">
+    <script src="./starbucks.js" async></script>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#" class="logo"><img src="images/logo.png" alt="Logo"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="text--box">
+                <h2>It's not just Coffee<br>It's <span>Starbucks</span></h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                    Fugit incidunt voluptatibus aspernatur magnam dignissimos 
+                    voluptas ipsam officia dolorem, voluptates sint. 
+                    Quia voluptas nesciunt dolores quas eligendi, 
+                    molestias labore excepturi omnis.</p>
+                    <a href="#">Learn More</a>
+            </div>
+            <div class="img--box">
+                    <img src="images/starbucks-matcha-white.png" class="starbucks" alt="Coffee">
+            </div>
+        </div>
+        <ul class="other--items">
+            <li><img src="images/starbucks-matcha-white.png" onclick="imgSlider('images/starbucks-matcha-white.png');changeCircleColor('#017143');"></li>
+            <li><img src="images/starbucks-latte.png" onclick="imgSlider('images/starbucks-latte.png');changeCircleColor('#eb7495');"></li>
+            <li><img src="images/starbucks-unicorn.png" onclick="imgSlider('images/starbucks-unicorn.png');changeCircleColor('#d752b1')"></li>
+        </ul>
+        <ul class="social--links">
+            <li><a href="#"><img src="images/facebook.png"></a></li>
+            <li><a href="#"><img src="images/twitter.png"></a></li>
+            <li><a href="#"><img src="images/instagram.png"></a></li>
+        </ul>
+    </section>
+</body>
+</html>
