@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 1000px;
+}
+
+p{
+    font-weight: 300;
+    color: #111;
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('images/bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.banner .content{
+    max-width: 900px;
+    text-align: center;
+}
+
+.banner .content h2{
+    font-size: 5em;
+    color: #FFF;
+}
+
+.banner .content h2 span{
+    color: #0000FF;
+}
+
+.banner .content p{
+    font-size: 1em;
+    color: #FFF;
+}
+
+.btn{
+    font-size: 1em;
+    color: #FFF;
+    background: #0000FF;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    letter-spacing: 6px;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+header.sticky{
+    background: #FFF;
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+header .logo{
+    color: #FFF;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+header.sticky .logo{
+    color: #111;
+}
+
+header .logo span{
+    color: #0000FF;
+}
+
+.nav--container{
+    display: flex;
+}
+
+.navigation{
+    display: flex;
+}
+
+.navigation ul li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 30px;
+}
+
+.navigation ul li a{
+    text-decoration: none;
+    color: #FFF;
+    font-weight: 300;
+}
+
+header.sticky .navigation ul li a{
+    color: #111;
+}
+
+.navigation ul li a:hover{
+    color: #0000FF;
+}
+
+.menu--toggle{
+    display: none;
+}
+
+section{
+    padding: 100px;
+}
+
+.login--section{
+    position: relative;
+}
+
+.title--text{
+    color: #111;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.title--text span{
+    color: #0000FF;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login--signup{
+    position: relative;
+    padding: 75px 50px;
+    background: #FFF;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.login--signup h2{
+    color: #111;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.login--signup .input--box{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login--signup .input--box input{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: 111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+}
+
+.login--signup .input--box input[type="submit"]{
+    font-size: 1em;
+    color: #FFF;
+    background: #0000FF;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    max-width: 100px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.login--login{
+    position: relative;
+    padding: 75px 50px;
+    background: #FFF;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.login--login h2{
+    color: #111;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.login--login .input--box{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login--login .input--box input{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: 111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+}
+
+.login--login .input--box input[type="submit"]{
+    font-size: 1em;
+    color: #FFF;
+    background: #0000FF;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    max-width: 100px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 991px){
+    header, header.sticky{
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    .nav--container{
+        display: none;
+    }
+
+    .nav--container.active{
+       width: 100%;
+       height: calc(100% - 68px);
+       position: fixed;
+       top: 68px;
+       left: 0;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       background: #FFF;
+    }
+
+    .nav--container.active .navigation{
+        display: flex;
+    }
+
+    .navigation ul li{
+        margin-left: 0;
+        text-align: center;
+        display: block;
+    }
+
+    .navigation ul li a{
+        color: #111;
+        font-size: 1.6em;
+        padding-right: 20px;
+    }
+
+    .menu--toggle{
+        display: block;
+        position: relative;
+        width: 60px;
+        height: 60px;
+        font-size: 45px;
+        text-align: center;
+        color: #FFF;
+        cursor: pointer;
+    }
+    
+    .menu--toggle.sticky{
+        color: #111;
+    }
+
+    header.sticky .menu--toggle{
+        filter: invert(1);
+    }
+
+    section{
+        padding: 20px;
+    }
+
+    .banner .content h2{
+        font-size: 3em;
+    }
+
+    .title--text{
+        font-size: 1.8em;
+        line-height: 1.5em;
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+
+    .login--signup, .login--login{
+        padding: 35px 40px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner .content h2{
+        font-size: 2.2em;
+    }
+}
