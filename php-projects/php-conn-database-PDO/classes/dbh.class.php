@@ -3,7 +3,7 @@
         private $host = "localhost";
         private $user = "root";
         private $pwd = "root";
-        private $dbName = "dshightower";
+        private $dbName = "";
 
         protected function connect(){
             // Data Source Name (dsn)
