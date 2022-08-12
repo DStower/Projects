@@ -5,7 +5,7 @@
             try {
                 $username = "root";
                 $password = "root";
-                $dbh = new PDO('mysql:host=localhost;dbname=dshightower', $username, $password);
+                $dbh = new PDO('mysql:host=localhost;dbname=', $username, $password);
                 return $dbh;
             } catch (PDOException $e) {
                 print "Error! " . $e->getMessage() . "<br>";
