@@ -1,0 +1,261 @@
+<?php
+try{
+    $db_name = 'mysql:host=localhost;dbname=contact_db';
+    $username = 'root';
+    $password = 'root';
+
+    $conn = new PDO($db_name, $username, $password);
+}catch(PDOException $e){
+    echo 'Connection Failed: ' . $e->getMessage();
+}
+
+if(isset($_POST['send'])){
+    $name = $_POST['name'];
+    $name = filter_var($name, FILTER_UNSAFE_RAW);
+    $phone = $_POST['phone'];
+    $phone = filter_var($phone, FILTER_UNSAFE_RAW);
+    $guests = $_POST['guests'];
+    $guests = filter_var($guests, FILTER_UNSAFE_RAW);
+
+    $select_contact = $conn->prepare("SELECT * FROM contact_form WHERE name = ? AND number = ? AND guests = ?;");
+    $select_contact->execute([$name, $phone, $guests]);
+
+    if($select_contact->rowCount() > 0){
+        $message[] = 'Message already sent!';
+    }else{
+        $insert_contact = $conn->prepare("INSERT INTO contact_form (name, number, guests) VALUES (?, ?, ?);");
+        $insert_contact->execute([$name, $phone, $guests]);
+        $message[] = 'Message Sent Successfully';
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/script.js" async></script>
+</head>
+<body>
+<?php
+    if(isset($message)){
+        foreach($message as $message){
+            echo '
+            <div class="message">
+                <span>'.$message.'</span>
+                <i class="fas fa-times" onclick="this.parentElement.remove()"></i>
+            </div>
+            ';
+        }
+    }
+?>
+    <!-- header section starts -->
+    <header class="header">
+        <section class="flex">
+            <a href="#home" class="logo"><img src="images/logo.png"></a>
+            <nav class="navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#team">Team</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </section>
+    </header>
+    <!-- header section ends -->
+
+    <!-- home section starts -->
+    <div class="home-bg">
+        <section class="home" id="home">
+            <div class="content">
+                <h3>Best Smelling Coffee</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt qui, repellendus suscipit similique minus.</p>
+                <a href="#about" class="btn">About Us</a>
+            </div>
+        </section>
+    </div>
+    <!-- home section ends -->
+
+    <!-- about section starts -->
+    <section class="about" id="about">
+        <div class="image">
+            <img src="images/about-img.png">
+        </div>
+        <div class="content">
+            <h3>Just one cup can bring a smile upon your face</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ab voluptates eius nihil perspiciatis explicabo accusamus officia natus voluptatibus.</p>
+            <a href="#menu" class="btn">Our Menu</a>
+        </div>
+    </section>
+    <!-- about section ends -->
+
+    <!-- facility section starts -->
+    <section class="facility">
+        <div class="heading">
+            <img src="images/heading-img.png">
+            <h3>Our Facility</h3>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/icon-1.png">
+                <h3>Coffee Varieties</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="box">
+                <img src="images/icon-2.png">
+                <h3>Premium Coffee Beans</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="box">
+                <img src="images/icon-3.png">
+                <h3>Fresh Baked Delicacies</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="box">
+                <img src="images/icon-4.png">
+                <h3>Fresh Brewed Coffee</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </section>
+    <!-- facility section ends -->
+
+    <!-- menu section starts -->
+    <section class="menu" id="menu">
+        <div class="heading">
+            <img src="images/heading-img.png">
+            <h3>Most Ordered</h3>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/menu-1.png">
+                <h3>Coffee Delight</h3>
+            </div>
+            <div class="box">
+                <img src="images/menu-2.png">
+                <h3>Cappuccino</h3>
+            </div>
+            <div class="box">
+                <img src="images/menu-3.png">
+                <h3>Mocha</h3>
+            </div>
+            <div class="box">
+                <img src="images/menu-4.png">
+                <h3>Frappuccino</h3>
+            </div>
+            <div class="box">
+                <img src="images/menu-5.png">
+                <h3>Black Coffee (Strong)</h3>
+            </div>
+            <div class="box">
+                <img src="images/menu-6.png">
+                <h3>Soul Warming Coffee</h3>
+            </div>
+        </div>
+    </section>
+    <!-- menu section ends -->
+
+    <!-- gallery section starts -->
+    <section class="gallery" id="gallery">
+        <div class="heading">
+            <img src="images/heading-img.png">
+            <h3>Gallery</h3>
+        </div>
+        <div class="box-container">
+            <img src="images/gallery-1.jpg">
+            <img src="images/gallery-2.jpg">
+            <img src="images/gallery-3.jpg">
+            <img src="images/gallery-4.jpg">
+            <img src="images/gallery-5.jpg">
+            <img src="images/gallery-6.jpg">
+        </div>
+    </section>
+    <!-- gallery section ends -->
+
+    <!-- team section starts -->
+    <section class="team" id="team">
+        <div class="heading">
+            <img src="images/heading-img.png">
+            <h3>Our Team</h3>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/our-team-1.jpg">
+                <h3>Somebody Special</h3>
+            </div>
+            <div class="box">
+                <img src="images/our-team-2.jpg">
+                <h3>Somebody Special</h3>
+            </div>
+            <div class="box">
+                <img src="images/our-team-3.jpg">
+                <h3>Somebody Special</h3>
+            </div>
+            <div class="box">
+                <img src="images/our-team-4.jpg">
+                <h3>Somebody Special</h3>
+            </div>
+            <div class="box">
+                <img src="images/our-team-5.jpg">
+                <h3>Somebody Special</h3>
+            </div>
+            <div class="box">
+                <img src="images/our-team-6.jpg">
+                <h3>Somebody Special</h3>
+            </div>
+        </div>
+    </section>
+    <!-- team section ends -->
+
+    <!-- contact section starts -->
+    <section class="contact" id="contact">
+        <div class="heading">
+            <img src="images/heading-img.png">
+            <h3>Contact Us</h3>
+        </div>
+        <div class="row">
+            <div class="image">
+                <img src="images/contact-img.png">
+            </div>
+            <form action="" method="post">
+                <h3>Make A Reservation</h3>
+                <input type="text" name="name" class="box" maxlength="20" placeholder="Enter Your Name" required>
+                <input type="tel" name="phone" class="box" minlength="10" maxlength="10" placeholder="Enter Your Phone Number" required>
+                <input type="number" name="guests" class="box" placeholder="How Many Guests" min="0" max="20" onkeypress="if(this.value.length == 2) return false;" required>
+                <input type="submit" name="send" value="Send Message" class="btn">
+            </form>
+        </div>
+    </section>
+    <!-- contact section ends -->
+
+    <!-- footer section starts -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <h3>Our Email</h3>
+                <p>testds@gmail.com</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-clock"></i>
+                <h3>Opening Hours</h3>
+                <p>07:00am to 09:00pm</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-phone"></i>
+                <h3>Our Number</h3>
+                <p>+1234567890</p>
+            </div>
+        </div>
+        <div class="credit">&copy; Copyright @ <?php echo date('Y'); ?> by <span>D.S.</span> | All Rights Reserved!</div>
+    </section>
+    <!-- footer section ends -->
+</body>
+</html>
