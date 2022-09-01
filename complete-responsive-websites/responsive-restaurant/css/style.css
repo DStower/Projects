@@ -223,7 +223,7 @@ header .navigation a:hover{
 }
 
 .specialty .box-container .box:hover .content{
-transform: translateY(100%);
+    transform: translateY(100%);
 }
 
 .popular .box-container{
