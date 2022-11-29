@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+}
+
+body{
+    background-color: rgba(46,46,46);
+    color: rgba(255,255,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#game{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(32,32,32,32);
+}
+
+.card{
+    width: 160px;
+    height: 120px;
+    background-color: rgba(26,26,255);
+    border-left: 10px solid rgba(19,19,168);
+    border-right: 10px solid rgba(11,11,91);
+    border-top: 10px solid rgba(1,61,200);
+    border-bottom: 10px solid rgba(20,20,89);
+    text-align: center;
+    font-size: 79px;
+    margin: 5px;
+    padding: 10px;
+    line-height: 84px;
+}
+
+.first-btn{
+    background-color: rgba(24,171,24);
+    padding: 5px;
+}
+
+.second-btn{
+    background-color: rgba(190,57,37);
+    padding: 5px;
+}
+
+.genre-title{
+    background-color: rgba(26,26,255);
+    text-align: center;
+    font-size: 28px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.correct-answer{
+    background-color: rgba(186,186,24);
+}
+
+.wrong-answer{
+    background-color: rgba(221,64,56);
+}
