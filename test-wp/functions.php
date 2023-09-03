@@ -26,9 +26,6 @@ add_action('wp_enqueue_scripts', 'testwp_include_custom_jquery');
 function testwp_register_scripts(){
     wp_register_script('testwp-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), false, 'all');
     wp_enqueue_script('testwp-script');
-
-    wp_register_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js?onload=onLoadRecaptcha&render=6Ld7E14iAAAAAE5Vb34eJrd0zap9jgsKjOQPFsDC', array(), false, 'all');
-    wp_enqueue_script('google-recaptcha');
 }
 add_action('wp_enqueue_scripts', 'testwp_register_scripts');  
 
